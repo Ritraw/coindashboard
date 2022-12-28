@@ -5,6 +5,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { createTheme, ThemeProvider } from '@mui/material';
+import Grid from '../grid/Grid';
 import './Tabs.css';
 
 function Tabs({coins}) {
@@ -42,9 +43,11 @@ function Tabs({coins}) {
           </TabList>
         </Box>
         <TabPanel value="grid">
-            {coins.map((item,i)=>(
-                <p key={i}>{item.name}</p>
-            ))}
+            <div className='grid-flex'>
+                {coins.map((coin,i)=>(
+                  <Grid coin={coin} key={i}/>
+                ))}
+            </div>
         </TabPanel>
         <TabPanel value="list">Item Two</TabPanel>
         

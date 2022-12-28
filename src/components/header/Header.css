@@ -17,12 +17,15 @@
 .link{
     color: var(--grey);
     font-weight: 600;
+    
 }
+a:link { text-decoration: none; }
 .link-flex{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
+    
 }
 
 .link:hover{

@@ -6,6 +6,7 @@
     border-radius: 3rem;
     cursor: pointer;
     font-weight: 600;
+    width: fit-content;
 }
 
 .btn-div:hover{
@@ -22,6 +23,7 @@
     font-weight: 600;
     background-color: var(--black);
     color: var(--white );
+    width: fit-content;
 }
 .btn-outlined:hover{
     box-shadow: blue;

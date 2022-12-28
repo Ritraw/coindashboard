@@ -1,7 +1,7 @@
 import React from 'react'
 import './Header.css'
 import Button from '../button/Button'
-import Drawer from './Drawer'
+import MobileDrawer from './Drawer'
 
 function Header() {
   return (
@@ -11,18 +11,20 @@ function Header() {
           <a href='/'>
             <p className='link'>Home</p>
           </a>
-          <a href='/'>
+          <a href='/compare'>
             <p className='link'>Compare</p>
           </a>
-          <a href='/'>
+          <a href='/watchlist'>
             <p className='link'>WatchList</p>
           </a>
-          
+          <a href='/dashboard'>
           <Button text="Dashboard"
             onClick= {()=>{console.log("Clicked")}}
             />
+          </a>
         </div>
-        <Drawer/>
+        
+        <MobileDrawer/>
     </div>
   )
 }

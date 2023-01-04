@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../components/header/Header'
+import Header from '../components/common/header/Header'
 import Landing from '../components/LandingPage/Landing'
 
 function Home() {

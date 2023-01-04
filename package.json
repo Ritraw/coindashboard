@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
+    "build": "^0.1.4",
     "chart.js": "^4.1.1",
     "e": "^0.2.2",
     "framer-motion": "^8.0.2",

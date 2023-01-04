@@ -3,11 +3,24 @@ import React from 'react'
 import Header from "../components/header/Header"
 import Tabs from "../components/dashboard/Tabs/Tabs"
 import { useState, useEffect } from 'react'
+import Search from '../components/dashboard/search/Search';
 
 
 function Dashboard() {
   const [coins,setCoins] = useState([]);
-
+  const [search,setSearch] = useState("");
+  const onChange = (e)=>
+  {
+    setSearch(e.target.value);
+  };
+  var filteredCoins = coins.filter((coin) => {
+    if (
+      coin.name.toLowerCase().includes(search.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(search.toLowerCase())
+    ) {
+      return coin;
+    }
+  });
   useEffect(()=>{
     getData();
   }, []);
@@ -31,7 +44,8 @@ function Dashboard() {
   return (
     <div>
     <Header/>
-    <Tabs coins={coins}/>
+    <Search search={search} onChange={onChange}/>
+    <Tabs coins={filteredCoins}/>
     </div>
   )
 }

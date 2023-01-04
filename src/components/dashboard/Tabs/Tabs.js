@@ -7,6 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import { createTheme, ThemeProvider } from '@mui/material';
 import Grid from '../grid/Grid';
 import './Tabs.css';
+import List from '../list/List';
 
 function Tabs({coins}) {
     const [tabValue,setTabValue] = useState("grid");
@@ -33,27 +34,32 @@ function Tabs({coins}) {
       };
 
     return (
-    <div>
+    
+      <Box>
        <ThemeProvider theme={theme}>
         <TabContext value={tabValue}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList variant="fullWidth" onChange={handleChange} aria-label="lab API tabs example">
             <Tab label="Grid" value="grid" sx={style} />
             <Tab label="List" value="list" sx={style} />
           </TabList>
-        </Box>
-        <TabPanel value="grid">
-            <div className='grid-flex'>
+        <TabPanel value="grid" className='tabPanel'>
+            <Box className='grid-flex'>
                 {coins.map((coin,i)=>(
                   <Grid coin={coin} key={i}/>
                 ))}
-            </div>
+            </Box>
         </TabPanel>
-        <TabPanel value="list">Item Two</TabPanel>
+        <TabPanel value="list" className='tabPanel'>
+        <table className="list-flex">
+              {coins.map((coin, i) => (
+                <List coin={coin} key={i}/>
+              ))}
+            </table>
+        </TabPanel>
         
       </TabContext>
       </ThemeProvider>
-    </div>
+      </Box>
   );
 }
 

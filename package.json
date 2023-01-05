@@ -17,6 +17,7 @@
     "e": "^0.2.2",
     "framer-motion": "^8.0.2",
     "is.js": "^0.0.2",
+    "node-module": "^2.0.0",
     "opts": "^2.0.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.1.0",
